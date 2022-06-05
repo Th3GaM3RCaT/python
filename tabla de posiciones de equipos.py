@@ -1,5 +1,7 @@
 from os import system
+from re import A
 import time
+from timeit import repeat
 teams = []
 points = []
 points_sorted = []
@@ -62,27 +64,36 @@ while option !=0:
         elif a == 2:
             a=1
             print ("ingrese el nombre del equipo")
+            
             for b in teams:
                 print (a, b)
                 a=a+1
-                time.sleep (0.4)
             eliminar = str(input())
+            a = teams.index(eliminar)
             teams.remove (eliminar)
+            points.remove (points[a])
 
     elif option == 4: #4 ver tabla de posiciones (de mas a menos puntos)
-        print ("1 sorted, 2 metodo burbuja")
-        a =int (input ())
-        if a ==1:
-            points_sorted = sorted (points, reverse=True)
-            for a in points_sorted:
-                b = points.index (a)
-                print (teams[b], a, "puntos")
-            input ()
-        elif a ==2:
-            for a in points:
-                a
+        intercambio = True
+        while intercambio:
+            intercambio = False
+            for a in range(len(points) - 1):
+                if points[a]<points[a+1]:
+                    points[a],points[a+1]=points[a+1],points[a]
+                    teams[a],teams[a+1]=teams[a+1],teams[a]
+                    intercambio=True
+        for a in range(len(points)):
+            print ("equipo ", teams[a], ", ", points[a], "puntos" )
+        input ()
+
+
+            
     elif option == 5: #5 ver 3 primeros lugares
-        a
+        print ("1er lugar", teams[0],"con ", points[0] ,"puntos")
+        print ("2do lugar", teams[1],"con ", points[1] ,"puntos")
+        print ("3er lugar", teams[2],"con ", points[2] ,"puntos")
+        input ()
+
     elif option == 0: #6 salir
         print ("saliendo ...")
 
