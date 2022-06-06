@@ -35,5 +35,5 @@ while option !=0:
         elif option == 0: #0 salir
             print ("saliendo ...")
     except ValueError:
-        print ()
+        print ("mejor ingrese un número")
 
