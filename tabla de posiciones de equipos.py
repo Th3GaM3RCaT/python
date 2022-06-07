@@ -21,6 +21,7 @@ while option !=0:
     option = int (input ())
     a=0
     b=0
+
     if option == 1: #1 ingresar equipo y puntos
         teams_name = input ("ingrese el quipo: ")
         if teams_name not in teams:
@@ -47,6 +48,7 @@ while option !=0:
             editar =editar-1
             print (teams[editar])
             points [editar] = int(input("ingrese cantidad: "))
+
     elif option == 3: #3 eliminar equipo
         print ("¿como desea eliminar?")
         print ("1 por indice        2 por nombre")
@@ -61,6 +63,7 @@ while option !=0:
             eliminar = eliminar-1
             teams.pop (eliminar)
             points.pop (eliminar)
+
         elif a == 2:
             a=1
             print ("ingrese el nombre del equipo")
