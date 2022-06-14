@@ -2,8 +2,8 @@
 
 from os import system
 import time
-visitantes = ["leandro","rodrigo","leandro","leandro","leandro","leandro"]
-ruts = ["5-6","1-2","5-6","5-6","5-6","5-6"]
+visitantes = ["leandro","rodrigo","leandro","leandro","leandro","leandro","mati","mati","mati","mati","mati","mati","mati","mati"]
+ruts = ["5-6","1-2","5-6","5-6","5-6","5-6","3-4","3-4","3-4","3-4","3-4","3-4","3-4","3-4"]
 option = 10
 rut = "1-1"
 while option !=0:
@@ -18,7 +18,9 @@ while option !=0:
     a = 0
     b = 0
     c = 0
+    lista = []
     if option == 1: #1 ingresar visitantes
+        system ("cls")
         print ("ingrese rut")
         rut = input ()
         print ("ingrese nombre:")
@@ -37,41 +39,43 @@ while option !=0:
 
 
     elif option == 2: #2 ver a todos los visitantes
-        print ("opcion 2")
+        system ("cls")
         for a in visitantes:
-            b = visitantes.index (a)
-            print ("rut:", ruts[b])
-            print ("nombre:", visitantes[b])
-            print ()
+            if a not in lista:
+                b = visitantes.index (a)
+                print ("rut:", ruts[b])
+                print ("nombre:", visitantes[b])
+                if visitantes.count(a)!=1:
+                    print (f"ha venido {visitantes.count (a)} veces")
+                else:print (f"ha venido {visitantes.count (a)} vez")
+                print ()
+                lista.append (a)
         input()
 
     elif option == 3: #3 ver los visitantes que han venido mas de cuatro veces
-        print ("opcion 3")
-        lista =[]
+        system ("cls")
         for a in ruts:
             c = ruts.index (a)
             b = ruts.count (a)
-            if b>=4:
+            if b>4:
                 if a not in lista:
                     print (f"{visitantes[c]} ha venido {b} veces")
                     lista.append (a)
-                    print ("a^3")
-                else:
-                    print ("a^2")
-            else:
-                print ("a")
         input()
 
 
 
 
     elif option == 4: #4 buscar el visitante por el RUT, si ha venido mostrar el nombre y cuantas veces ha entrado
+        system ("cls")
         print ("ingrese el rut a buscar:")
         a= input ()
         if a in ruts:
             b = ruts.index (a)
-            print (visitantes[b])
-            print (visitantes.count (visitantes[b]))
+            c= visitantes[b]
+            if ruts.count(a)!=1:
+                print (f"{c} ha venido {ruts.count (a)} veces")
+            else:print (f"{c} ha venido {ruts.count (a)} vez")
         input()
 
 
