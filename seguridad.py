@@ -11,8 +11,7 @@
 #ver a todos los visitantes
 #ver los visitantes que han venido mas de cuatro veces
 #buscar el visitante por el RUT, si ha venido mostrar el nombre y cuantas veces ha entrado
-Print ("ola
-")
+print ("ola")
 from os import system
 import time
 visitantes = []
