@@ -1,7 +1,5 @@
 from os import system
-from re import A
 import time
-from timeit import repeat
 teams = []
 points = []
 points_sorted = []
@@ -16,8 +14,6 @@ while option !=0:
     print ("4 ver tabla de posiciones") #(mas o menos puntos)
     print ("5 ver 3 primeros lugares")
     print ("0 salir")
-    print (teams)
-    print (points)
     option = int (input ())
     a=0
     b=0
@@ -92,9 +88,9 @@ while option !=0:
 
             
     elif option == 5: #5 ver 3 primeros lugares
-        print ("1er lugar", teams[0],"con ", points[0] ,"puntos")
-        print ("2do lugar", teams[1],"con ", points[1] ,"puntos")
-        print ("3er lugar", teams[2],"con ", points[2] ,"puntos")
+        print ( f"1er lugar {teams[0]} con {points[0]} puntos" )
+        print ( f"2do lugar {teams[1]} con {points[1]} puntos" )
+        print ( f"3er lugar {teams[2]} con {points[2]} puntos" )
         input ()
 
     elif option == 0: #6 salir
